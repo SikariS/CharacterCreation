@@ -1,0 +1,10 @@
+D:\Projektit\CharacterCreation\CharacterCreation\bin\Debug\CharacterCreation.exe.config
+D:\Projektit\CharacterCreation\CharacterCreation\bin\Debug\CharacterCreation.exe
+D:\Projektit\CharacterCreation\CharacterCreation\bin\Debug\CharacterCreation.pdb
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.csprojAssemblyReference.cache
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.Form1.resources
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.Properties.Resources.resources
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.csproj.GenerateResource.cache
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.csproj.CoreCompileInputs.cache
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.exe
+D:\Projektit\CharacterCreation\CharacterCreation\obj\Debug\CharacterCreation.pdb
