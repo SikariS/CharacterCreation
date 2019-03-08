@@ -13,41 +13,52 @@ namespace CharacterCreation
     public partial class Form1 : Form
     {
         String race;
-        Functions characterCreatorInstance = new Functions();
+        bool choiceRand; //This will be to see if the random choice is made for each time generate button is pressed a new race needs to be generated.
+        Functions cCreatorInst = new Functions();
         public Form1()
         {
             InitializeComponent();
         }
 
+        // Generate Button for Warhammer
         private void bGenerateWH_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Generoidaan hahmo rodulla " + race + characterCreatorInstance.CharacterCreatorWH(race));
-            //characterCreatorInstance.CharacterCreatorWH(race);
+            if (choiceRand) //New race every time you press the Generate button instead of changing race once.
+            {
+                race = cCreatorInst.randRace("WH");
+            }
+            MessageBox.Show("Generoidaan hahmo rodulla " + race + " \r" + cCreatorInst.mainProfileCreatorWH(race));
         }
 
         private void rbHumanWH_CheckedChanged(object sender, EventArgs e)
         {
             race = rbHumanWH.Text;
+            choiceRand = false;
         }
 
         private void rbDwarfWH_CheckedChanged(object sender, EventArgs e)
         {
             race = rbDwarfWH.Text;
+            choiceRand = false;
         }
 
         private void rbElfWH_CheckedChanged(object sender, EventArgs e)
         {
             race = rbElfWH.Text;
+            choiceRand = false;
         }
 
         private void rbHalflingWH_CheckedChanged(object sender, EventArgs e)
         {
             race = rbHalflingWH.Text;
+            choiceRand = false;
         }
 
         private void rbRandomWH_CheckedChanged(object sender, EventArgs e)
         {
             race = rbRandomWH.Text;
+            choiceRand = true;
+
         }
     }
 }
