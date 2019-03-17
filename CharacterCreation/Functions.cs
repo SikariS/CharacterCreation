@@ -11,13 +11,14 @@ namespace CharacterCreation
         //This function will be used for generating the main profiles
         public string MainProfileCreatorWH(string race)
         {
-            int ws = randInt(22,40), bs = randInt(22, 40), s = randInt(22, 40), t = randInt(22, 40), ag = randInt(22, 40), intel = randInt(22, 40), wp = randInt(22, 40), fel = randInt(22, 40);
+            int ws = randInt(22,40), bs = randInt(22, 40), s = randInt(22, 40), t = randInt(22, 40), ag = randInt(22, 40), intel = randInt(22, 40), wp = randInt(22, 40), fel = randInt(22, 40), wounds;
+            int sb = s / 10; //Strength Bonus is the first digit (or the tenth) in Strength (for example with S 38 SB is 3)
+            int tb = t / 10; //Toughness Bonus is the first digit (or the tenth) in Toughness
             string stat = "";
 
             if (race == "Human")
             {
-
-                ;
+                wounds = randInt(10, 13);
             }
 
             if (race == "Dwarf")
@@ -26,12 +27,14 @@ namespace CharacterCreation
                 t += 10;
                 ag -= 10;
                 fel -= 10;
+                wounds = randInt(11, 14);
             }
 
             if (race == "Elf")
             {
                 bs += 10;
                 ag += 10;
+                wounds = randInt(9, 12);
             }
 
             if (race == "Halfling")
@@ -42,13 +45,15 @@ namespace CharacterCreation
                 t -= 10;
                 ag += 10;
                 fel += 10;
+                wounds = randInt(8, 11);
             }
 
             else
             {
-
+                wounds = randInt(10, 13);
             }
-            stat = "WS: " + ws + " BS: " + bs + " S: " + s + " T: " + t + " Ag: " + ag + " Int: " + intel + " WP: " + wp + " Fel: " + fel;
+            stat = "WS: " + ws + " BS: " + bs + " S: " + s + " T: " + t + " Ag: " + ag + " Int: " + intel + " WP: " + wp + " Fel: " + fel +
+                " SB: " + sb + " TB: " + tb + " W: " + wounds;
                 return stat;
         }
 

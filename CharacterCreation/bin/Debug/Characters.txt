@@ -1,14 +1,12 @@
-Generoidaan hahmo rodulla Halfling WS: 15 BS: 37 S: 28 T: 13 Ag: 41 Int: 28 WP: 39 Fel: 35
-Generoidaan hahmo rodulla Elf WS: 35 BS: 35 S: 25 T: 24 Ag: 42 Int: 23 WP: 29 Fel: 28
-Generoidaan hahmo rodulla Dwarf WS: 34 BS: 26 S: 35 T: 46 Ag: 24 Int: 32 WP: 28 Fel: 26
-Generoidaan hahmo rodulla Elf WS: 24 BS: 48 S: 25 T: 31 Ag: 40 Int: 33 WP: 32 Fel: 36
-Generoidaan hahmo rodulla Dwarf WS: 42 BS: 25 S: 34 T: 42 Ag: 24 Int: 30 WP: 39 Fel: 19
-Generoidaan hahmo rodulla Human WS: 31 BS: 31 S: 27 T: 40 Ag: 25 Int: 36 WP: 25 Fel: 32
-Generoidaan hahmo rodulla Dwarf WS: 49 BS: 32 S: 35 T: 44 Ag: 22 Int: 22 WP: 39 Fel: 20
-Generoidaan hahmo rodulla Dwarf WS: 38 BS: 40 S: 31 T: 47 Ag: 21 Int: 25 WP: 39 Fel: 26
-Generoidaan hahmo rodulla Dwarf WS: 45 BS: 33 S: 39 T: 38 Ag: 18 Int: 24 WP: 37 Fel: 27
-Generoidaan hahmo rodulla Elf WS: 31 BS: 35 S: 34 T: 29 Ag: 37 Int: 39 WP: 25 Fel: 33
-Generoidaan hahmo rodulla Human WS: 32 BS: 39 S: 33 T: 34 Ag: 33 Int: 26 WP: 24 Fel: 32
-Generoidaan hahmo rodulla Dwarf WS: 45 BS: 34 S: 40 T: 34 Ag: 13 Int: 30 WP: 27 Fel: 20
-Generoidaan hahmo rodulla Halfling WS: 21 BS: 42 S: 15 T: 23 Ag: 47 Int: 36 WP: 29 Fel: 40
-Generoidaan hahmo rodulla Dwarf WS: 44 BS: 40 S: 34 T: 42 Ag: 24 Int: 39 WP: 40 Fel: 18
+Generoidaan hahmo rodulla Human
+WS: 39 BS: 31 S: 34 T: 34 Ag: 39 Int: 27 WP: 40 Fel: 27 SB: 3 TB: 3 W: 12
+
+Generoidaan hahmo rodulla Human
+WS: 39 BS: 32 S: 29 T: 36 Ag: 22 Int: 32 WP: 24 Fel: 38 SB: 2 TB: 3 W: 12
+
+Generoidaan hahmo rodulla Human
+WS: 29 BS: 27 S: 40 T: 36 Ag: 30 Int: 25 WP: 35 Fel: 33 SB: 4 TB: 3 W: 10
+
+Generoidaan hahmo rodulla Halfling
+WS: 22 BS: 49 S: 18 T: 16 Ag: 47 Int: 31 WP: 40 Fel: 50 SB: 2 TB: 2 W: 10
+

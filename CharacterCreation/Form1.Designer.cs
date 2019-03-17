@@ -35,22 +35,24 @@
             this.rbHalflingWH = new System.Windows.Forms.RadioButton();
             this.rbRandomWH = new System.Windows.Forms.RadioButton();
             this.bGenerateWH = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBoxWHGenerateAmount = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(4, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(120, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Warhammer";
             // 
             // rbHumanWH
             // 
             this.rbHumanWH.AutoSize = true;
-            this.rbHumanWH.Location = new System.Drawing.Point(15, 26);
+            this.rbHumanWH.Location = new System.Drawing.Point(15, 42);
             this.rbHumanWH.Name = "rbHumanWH";
             this.rbHumanWH.Size = new System.Drawing.Size(59, 17);
             this.rbHumanWH.TabIndex = 1;
@@ -62,7 +64,7 @@
             // rbDwarfWH
             // 
             this.rbDwarfWH.AutoSize = true;
-            this.rbDwarfWH.Location = new System.Drawing.Point(80, 26);
+            this.rbDwarfWH.Location = new System.Drawing.Point(80, 42);
             this.rbDwarfWH.Name = "rbDwarfWH";
             this.rbDwarfWH.Size = new System.Drawing.Size(53, 17);
             this.rbDwarfWH.TabIndex = 2;
@@ -74,7 +76,7 @@
             // rbElfWH
             // 
             this.rbElfWH.AutoSize = true;
-            this.rbElfWH.Location = new System.Drawing.Point(139, 26);
+            this.rbElfWH.Location = new System.Drawing.Point(139, 42);
             this.rbElfWH.Name = "rbElfWH";
             this.rbElfWH.Size = new System.Drawing.Size(37, 17);
             this.rbElfWH.TabIndex = 3;
@@ -86,7 +88,7 @@
             // rbHalflingWH
             // 
             this.rbHalflingWH.AutoSize = true;
-            this.rbHalflingWH.Location = new System.Drawing.Point(182, 26);
+            this.rbHalflingWH.Location = new System.Drawing.Point(182, 42);
             this.rbHalflingWH.Name = "rbHalflingWH";
             this.rbHalflingWH.Size = new System.Drawing.Size(60, 17);
             this.rbHalflingWH.TabIndex = 4;
@@ -98,7 +100,7 @@
             // rbRandomWH
             // 
             this.rbRandomWH.AutoSize = true;
-            this.rbRandomWH.Location = new System.Drawing.Point(248, 26);
+            this.rbRandomWH.Location = new System.Drawing.Point(248, 42);
             this.rbRandomWH.Name = "rbRandomWH";
             this.rbRandomWH.Size = new System.Drawing.Size(65, 17);
             this.rbRandomWH.TabIndex = 5;
@@ -109,26 +111,50 @@
             // 
             // bGenerateWH
             // 
-            this.bGenerateWH.Location = new System.Drawing.Point(121, 49);
+            this.bGenerateWH.Location = new System.Drawing.Point(182, 65);
             this.bGenerateWH.Name = "bGenerateWH";
-            this.bGenerateWH.Size = new System.Drawing.Size(75, 23);
+            this.bGenerateWH.Size = new System.Drawing.Size(111, 23);
             this.bGenerateWH.TabIndex = 6;
             this.bGenerateWH.Text = "Generate";
             this.bGenerateWH.UseVisualStyleBackColor = true;
             this.bGenerateWH.Click += new System.EventHandler(this.bGenerateWH_Click);
             // 
-            // panel1
+            // comboBoxWHGenerateAmount
             // 
-            this.panel1.Location = new System.Drawing.Point(15, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(298, 62);
-            this.panel1.TabIndex = 7;
+            this.comboBoxWHGenerateAmount.FormattingEnabled = true;
+            this.comboBoxWHGenerateAmount.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.comboBoxWHGenerateAmount.Location = new System.Drawing.Point(118, 67);
+            this.comboBoxWHGenerateAmount.Name = "comboBoxWHGenerateAmount";
+            this.comboBoxWHGenerateAmount.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxWHGenerateAmount.TabIndex = 7;
+            this.comboBoxWHGenerateAmount.SelectedIndexChanged += new System.EventHandler(this.comboBoxWHGenerateAmount_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Amount to generate";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBoxWHGenerateAmount);
             this.Controls.Add(this.bGenerateWH);
             this.Controls.Add(this.rbRandomWH);
             this.Controls.Add(this.rbHalflingWH);
@@ -136,7 +162,6 @@
             this.Controls.Add(this.rbDwarfWH);
             this.Controls.Add(this.rbHumanWH);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -154,7 +179,8 @@
         private System.Windows.Forms.RadioButton rbHalflingWH;
         private System.Windows.Forms.RadioButton rbRandomWH;
         private System.Windows.Forms.Button bGenerateWH;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox comboBoxWHGenerateAmount;
+        private System.Windows.Forms.Label label2;
     }
 }
 

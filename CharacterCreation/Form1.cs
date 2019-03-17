@@ -12,7 +12,9 @@ namespace CharacterCreation
 {
     public partial class Form1 : Form
     {
-        String race;
+        string race;
+        string comboWHgenerateAmount;
+        int generateAmount;
         bool choiceRand; //This will be to see if the random choice is made for each time generate button is pressed a new race needs to be generated.
         Functions cCreatorInst = new Functions();
         public Form1()
@@ -23,15 +25,28 @@ namespace CharacterCreation
         // Generate Button for Warhammer
         private void bGenerateWH_Click(object sender, EventArgs e)
         {
+            string alustus;
             string tuloste;
-            if (choiceRand) //New race every time you press the Generate button instead of changing race once.
-            {
-                race = cCreatorInst.RandRace("WH");
-            }
-            tuloste = "Generoidaan hahmo rodulla " + race + " \r" + cCreatorInst.MainProfileCreatorWH(race);
+            string rivinvaihto = "";
 
-            MessageBox.Show(tuloste);
-            cCreatorInst.PrintToFile(tuloste);
+            int i = generateAmount;
+            while (i > 0)
+            {
+
+
+                if (choiceRand) //Random only worked once and randomized only when switched between races.
+                {
+                    race = cCreatorInst.RandRace("WH");
+                }
+                alustus = "Generoidaan hahmo rodulla " + race;
+                tuloste = cCreatorInst.MainProfileCreatorWH(race);
+
+                cCreatorInst.PrintToFile(alustus);
+                cCreatorInst.PrintToFile(tuloste);
+                cCreatorInst.PrintToFile(rivinvaihto);
+                i--;
+            }
+            MessageBox.Show("Tulostettiin " + generateAmount + " hahmoa tekstitiedostoon " +AppDomain.CurrentDomain.BaseDirectory + "Characters.txt");
         }
 
         private void rbHumanWH_CheckedChanged(object sender, EventArgs e)
@@ -67,7 +82,14 @@ namespace CharacterCreation
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            comboBoxWHGenerateAmount.SelectedIndex = 0; //The amount to generate is by default 1, combo has default value of 1
+            comboBoxWHGenerateAmount.DropDownStyle = ComboBoxStyle.DropDownList; //User cannot edit the values
+        }
 
+        private void comboBoxWHGenerateAmount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboWHgenerateAmount = comboBoxWHGenerateAmount.Text;
+            generateAmount = Int32.Parse(comboWHgenerateAmount); //Because the combo is locked and only has values from 1-10 no need to TryParse.
         }
     }
 }
