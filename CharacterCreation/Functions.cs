@@ -12,8 +12,6 @@ namespace CharacterCreation
         public string MainProfileCreatorWH(string race)
         {
             int ws = randInt(22,40), bs = randInt(22, 40), s = randInt(22, 40), t = randInt(22, 40), ag = randInt(22, 40), intel = randInt(22, 40), wp = randInt(22, 40), fel = randInt(22, 40), wounds;
-            int sb = s / 10; //Strength Bonus is the first digit (or the tenth) in Strength (for example with S 38 SB is 3)
-            int tb = t / 10; //Toughness Bonus is the first digit (or the tenth) in Toughness
             string stat = "";
 
             if (race == "Human")
@@ -52,6 +50,8 @@ namespace CharacterCreation
             {
                 wounds = randInt(10, 13);
             }
+            int sb = s / 10; //Strength Bonus is the first digit (or the tenth) in Strength (for example with S 38 SB is 3)
+            int tb = t / 10; //Toughness Bonus is the first digit (or the tenth) in Toughness
             stat = "WS: " + ws + " BS: " + bs + " S: " + s + " T: " + t + " Ag: " + ag + " Int: " + intel + " WP: " + wp + " Fel: " + fel +
                 " SB: " + sb + " TB: " + tb + " W: " + wounds;
                 return stat;
