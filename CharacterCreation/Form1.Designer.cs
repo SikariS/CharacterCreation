@@ -35,6 +35,7 @@
             this.rbHalflingWH = new System.Windows.Forms.RadioButton();
             this.rbRandomWH = new System.Windows.Forms.RadioButton();
             this.bGenerateWH = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -116,6 +117,13 @@
             this.bGenerateWH.UseVisualStyleBackColor = true;
             this.bGenerateWH.Click += new System.EventHandler(this.bGenerateWH_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(15, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(298, 62);
+            this.panel1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,8 +136,10 @@
             this.Controls.Add(this.rbDwarfWH);
             this.Controls.Add(this.rbHumanWH);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +154,7 @@
         private System.Windows.Forms.RadioButton rbHalflingWH;
         private System.Windows.Forms.RadioButton rbRandomWH;
         private System.Windows.Forms.Button bGenerateWH;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

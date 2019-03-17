@@ -23,11 +23,15 @@ namespace CharacterCreation
         // Generate Button for Warhammer
         private void bGenerateWH_Click(object sender, EventArgs e)
         {
+            string tuloste;
             if (choiceRand) //New race every time you press the Generate button instead of changing race once.
             {
-                race = cCreatorInst.randRace("WH");
+                race = cCreatorInst.RandRace("WH");
             }
-            MessageBox.Show("Generoidaan hahmo rodulla " + race + " \r" + cCreatorInst.mainProfileCreatorWH(race));
+            tuloste = "Generoidaan hahmo rodulla " + race + " \r" + cCreatorInst.MainProfileCreatorWH(race);
+
+            MessageBox.Show(tuloste);
+            cCreatorInst.PrintToFile(tuloste);
         }
 
         private void rbHumanWH_CheckedChanged(object sender, EventArgs e)
@@ -58,6 +62,11 @@ namespace CharacterCreation
         {
             race = rbRandomWH.Text;
             choiceRand = true;
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

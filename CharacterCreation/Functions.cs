@@ -9,7 +9,7 @@ namespace CharacterCreation
     class Functions
     {
         //This function will be used for generating the main profiles
-        public string mainProfileCreatorWH(string race)
+        public string MainProfileCreatorWH(string race)
         {
             int ws = randInt(22,40), bs = randInt(22, 40), s = randInt(22, 40), t = randInt(22, 40), ag = randInt(22, 40), intel = randInt(22, 40), wp = randInt(22, 40), fel = randInt(22, 40);
             string stat = "";
@@ -52,8 +52,21 @@ namespace CharacterCreation
                 return stat;
         }
 
-        static Random r = new Random(); /*If this isn't static it will cause the same r.Next to be same (the whole main profile will be the same)
+        //Print the txt file to the folder the program is running from (currently Debug folder)
+        public void PrintToFile(string print)
+        {
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "Characters.txt", true))
+            {
+                file.WriteLine(print);
+            }
+            //System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "Characters.txt", print);
+        }
+
+        /*If this isn't static it will cause the r.Next which are called at the same time to be the same (the whole main profile will be the same)
         because the random comes from time value and that is the same at the time of calling this function*/
+        static Random r = new Random();
+
         // Creates a number between min and max (max +1 because r.Next(1, 10) will give values from 1 to 9)
         public static int randInt(int min, int max)
         {
@@ -61,7 +74,7 @@ namespace CharacterCreation
         }
 
         //Function for generating a race (needs to know which game is used WH or SR)
-        public string randRace(string game)
+        public string RandRace(string game)
         {
             if (game == "WH")
             {   
