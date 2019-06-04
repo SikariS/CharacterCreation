@@ -13,7 +13,7 @@ namespace CharacterCreation
     public partial class Form1 : Form
     {
         string race;
-        string comboWHgenerateAmount;
+        string comboWHgenerateAmount, comboSRgenerateAmount;
         int generateAmount;
         bool choiceRand; //This will be to see if the random choice is made for each time generate button is pressed a new race needs to be generated.
         Functions cCreatorInst = new Functions();
@@ -90,6 +90,79 @@ namespace CharacterCreation
         {
             comboWHgenerateAmount = comboBoxWHGenerateAmount.Text;
             generateAmount = Int32.Parse(comboWHgenerateAmount); //Because the combo is locked and only has values from 1-10 no need to TryParse.
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbRandomSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbRandomSR.Text;
+            choiceRand = true;
+        }
+
+        private void bGenerateSR_Click(object sender, EventArgs e)
+        {
+            string alustus;
+            string tuloste;
+            string rivinvaihto = "";
+
+            int i = generateAmount;
+            while (i > 0)
+            {
+
+
+                if (choiceRand) //Random only worked once and randomized only when switched between races.
+                {
+                    race = cCreatorInst.RandRace("SR");
+                }
+                alustus = "Generoidaan hahmo rodulla " + race;
+                tuloste = cCreatorInst.MainProfileCreatorSR(race);
+
+                cCreatorInst.PrintToFile(alustus);
+                cCreatorInst.PrintToFile(tuloste);
+                cCreatorInst.PrintToFile(rivinvaihto);
+                i--;
+            }
+            MessageBox.Show("Tulostettiin " + generateAmount + " hahmoa tekstitiedostoon " + AppDomain.CurrentDomain.BaseDirectory + "Characters.txt");
+        }
+
+        private void rbHumanSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbHumanSR.Text;
+            choiceRand = false;
+        }
+
+        private void rbDwarfSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbDwarfSR.Text;
+            choiceRand = false;
+        }
+
+        private void rbElfSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbElfSR.Text;
+            choiceRand = false;
+        }
+
+        private void rbOrcSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbOrcSR.Text;
+            choiceRand = false;
+        }
+
+        private void rbTrollSR_CheckedChanged(object sender, EventArgs e)
+        {
+            race = rbTrollSR.Text;
+            choiceRand = false;
+        }
+
+        private void comboBoxSRGenerateAmount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboSRgenerateAmount = comboBoxSRGenerateAmount.Text;
+            generateAmount = Int32.Parse(comboSRgenerateAmount); //Because the combo is locked and only has values from 1-10 no need to TryParse.
         }
     }
 }

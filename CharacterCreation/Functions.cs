@@ -8,7 +8,7 @@ namespace CharacterCreation
 {
     class Functions
     {
-        //This function will be used for generating the main profiles
+        //This function will be used for generating the main profiles for Warhammer
         public string MainProfileCreatorWH(string race)
         {
             int ws = randInt(22,40), bs = randInt(22, 40), s = randInt(22, 40), t = randInt(22, 40), ag = randInt(22, 40), intel = randInt(22, 40), wp = randInt(22, 40), fel = randInt(22, 40), wounds;
@@ -57,6 +57,75 @@ namespace CharacterCreation
                 return stat;
         }
 
+        public string MainProfileCreatorSR(string race)
+        {
+            int body = randInt(1, 6), agi = randInt(1, 6), rea = randInt(1, 6), str = randInt(1, 6), cha = randInt(1, 6), intuition = randInt(1, 6), log = randInt(1, 6), wil = randInt(1, 6), ini;
+            string stat = "";
+
+            if (race == "Human")
+            {
+                
+            }
+
+            if (race == "Dwarf")
+            {
+                body++;
+                if (rea == 6)
+                {
+                    rea -= 1; //Dwarf rea is between 1-5
+                }
+                str += 2;
+                wil++;
+            }
+
+            if (race == "Elf")
+            {
+                agi++;
+                cha += 2;
+
+            }
+
+            if (race == "Orc")
+            {
+                body += 3;
+                str += 2;
+                if (cha == 6)
+                {
+                    cha -= 1; //Orc cha is between 1-5
+                }
+                if (log == 6)
+                {
+                    log -= 1; //Orc log is between 1-5
+                }
+
+            }
+
+            if (race == "Troll")
+            {
+                body += 4;
+                if (agi == 6)
+                {
+                    agi -= 1; //Troll agi is between 1-5
+                }
+                str += 4;
+                if (cha == 6)
+                    cha -= 2; //Troll cha is between 1-4
+                else if (cha == 5)
+                    cha--;
+                if (intuition == 6) //Troll intuition is between 1-5
+                    intuition--;
+                if (log == 6)//Troll log is between 1-5
+                    log--;
+            }
+            
+            ini = rea + intuition;
+            int physicalDamageTrack = 8 + body / 2; //Physical Damage Track is 8 Body / 2 (rounded up)
+            int stunDamageTrack = 8 + wil / 2; //Stun Damage Track is 8 Willpower / 2 (rounded up)
+            stat = "Body: " + body + " AGI: " + agi + " REA: " + rea + " STR: " + str + " CHA: " + cha + " Int: " + intuition + " LOG: " + log + " WIL: " + wil +
+                " INI: " + ini + " Physical DMG: " + physicalDamageTrack + " Stun DMG: " + stunDamageTrack;
+            return stat;
+        }
+
         //Print the txt file to the folder the program is running from (currently Debug folder)
         public void PrintToFile(string print)
         {
@@ -81,9 +150,10 @@ namespace CharacterCreation
         //Function for generating a race (needs to know which game is used WH or SR)
         public string RandRace(string game)
         {
+            int random;
             if (game == "WH")
             {   
-                int random = randInt(1, 4);
+                random = randInt(1, 4);
                 if (random == 1)
                 {
                     return "Human";
@@ -103,8 +173,34 @@ namespace CharacterCreation
                 else
                     return "Human"; //This won't happen as long as the upper randomization works
             }
-            else
-                return "Human"; //TODO Shadowrun Races to be randomized as well
+
+            if (game == "SR")
+            {
+                    random = randInt(1, 5);
+                    if (random == 1)
+                    {
+                        return "Human";
+                    }
+                    if (random == 2)
+                    {
+                        return "Dwarf";
+                    }
+                    if (random == 3)
+                    {
+                        return "Elf";
+                    }
+                    if (random == 4)
+                    {
+                        return "Orc";
+                    }
+                    if (random == 5)
+                    {
+                        return "Troll";
+                    }
+                    else
+                        return "Troll"; //This won't happen as long as the upper randomization works
+                } else
+                return "Dwarf";
         }
     }
 }
