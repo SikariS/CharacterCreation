@@ -119,7 +119,7 @@ namespace CharacterCreation
                     race = cCreatorInst.RandRace("SR");
                 }
                 alustus = "Generoidaan hahmo rodulla " + race;
-                tuloste = cCreatorInst.MainProfileCreatorSR(race);
+               tuloste = cCreatorInst.MainProfileCreatorSR(race);
 
                 cCreatorInst.PrintToFile(alustus);
                 cCreatorInst.PrintToFile(tuloste);

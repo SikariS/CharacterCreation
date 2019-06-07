@@ -119,10 +119,12 @@ namespace CharacterCreation
             }
             
             ini = rea + intuition;
-            int physicalDamageTrack = 8 + body / 2; //Physical Damage Track is 8 Body / 2 (rounded up)
-            int stunDamageTrack = 8 + wil / 2; //Stun Damage Track is 8 Willpower / 2 (rounded up)
+            double physicalDamageTrack = 8 + (double)body / 2; //Physical Damage Track is 8 Body / 2 (rounded up) below
+            double stunDamageTrack = 8 + (double)wil / 2; //Stun Damage Track is 8 Willpower / 2 (rounded up) below
+            physicalDamageTrack = Math.Round(physicalDamageTrack, MidpointRounding.AwayFromZero); //MidpointRounding needed for values such as 10.5 to be rounded correctly upwards
+            stunDamageTrack = Math.Round(stunDamageTrack, MidpointRounding.AwayFromZero);
             stat = "Body: " + body + " AGI: " + agi + " REA: " + rea + " STR: " + str + " CHA: " + cha + " Int: " + intuition + " LOG: " + log + " WIL: " + wil +
-                " INI: " + ini + " Physical DMG: " + physicalDamageTrack + " Stun DMG: " + stunDamageTrack;
+                " INI: " + ini + " Physical DMG: " + Convert.ToInt32(physicalDamageTrack) + " Stun DMG: " + Convert.ToInt32(stunDamageTrack);
             return stat;
         }
 
